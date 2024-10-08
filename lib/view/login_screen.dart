@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../Utils/utils.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -95,10 +94,16 @@ class _LoginScreenState extends State<LoginScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-              //  Navigator.pushNamed(context, RoutesNames.home);
-              // Utils.toastmesssage("my name is amjad ali");
-              // Utils.errorAnotherFlutterbar("my name is amjad ali", context);
-                 Utils.succesmesssageflushbar("my name is amjad ali", context);
+                  if (_emailController.text.isEmpty ||
+                      _passwordController.text.isEmpty) {
+                    Utils.errorAnotherFlutterbar(
+                        "please Fill all the feild !!", context);
+                  } else if (_passwordController.text.length < 6) {
+                    Utils.errorAnotherFlutterbar(
+                        "please Enter 6 digit password !!!!", context);
+                  } else {
+                    
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 15),

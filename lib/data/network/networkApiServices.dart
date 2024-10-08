@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class Networkapiservices extends Baseapiservices {
   @override
-  Future getGetApiRespnse(String url) async {
+  Future <dynamic> getGetApiRespnse(String url,dynamic data) async {
     dynamic resoponsejson;
     try {
       final resoponse =
